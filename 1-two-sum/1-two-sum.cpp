@@ -42,9 +42,10 @@ class Solution
             
             while(s<e){
                 if(v[s].first + v[e].first == target){
-                    ans.push_back(v[s].second);
-                    ans.push_back(v[e].second);
-                    break;
+                    // ans.push_back(v[s].second);
+                    // ans.push_back(v[e].second);
+                    // break;
+                    return {v[s].second, v[e].second};
                         
                 }else if(v[s].first + v[e].first > target){
                     e--;
@@ -54,7 +55,7 @@ class Solution
             }
             
             
-            
+            return {-1,-1};
             
             
             
