@@ -4,11 +4,11 @@ class Solution
         vector<int> twoSum(vector<int> &nums, int target)
         {
     
-            vector<int> ans;
+           
             
             
 //             hashmap approach
-            
+             // vector<int> ans;
 //             unordered_map <int,int> mp;
             
             
@@ -59,7 +59,7 @@ class Solution
             
             
             
-            return ans;
+         
             
             
         }
