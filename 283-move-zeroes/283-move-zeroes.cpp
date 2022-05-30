@@ -28,30 +28,48 @@ public:
         
         
         
-//         optimized
+//         optimized using extra space
         
-        vector <pair <int,int>> v;
-        int prevCount =0;
+//         vector <pair <int,int>> v;
+//         int prevCount =0;
         
         
-        for(int i =0; i<n; i++){
-            if(nums[i] != 0){
-                v.push_back(make_pair(nums[i], i-prevCount));
-                // prevCount =0;
-            }else{
-                prevCount ++;
+//         for(int i =0; i<n; i++){
+//             if(nums[i] != 0){
+//                 v.push_back(make_pair(nums[i], i-prevCount));
+//                 // prevCount =0;
+//             }else{
+//                 prevCount ++;
+//             }
+//         }
+        
+        
+//         for(int i=n-1; i>=n-prevCount; i--){
+            
+//             nums[i]=0;
+            
+//         }
+        
+//         for(int i=0; i<v.size(); i++){
+//             nums[v[i].second] = v[i].first;
+//         }
+        
+        
+        
+        
+//         more optimized two pointer
+        
+        int j=0;
+        for(int i=0; i<n; i++){
+            if(nums[i]){
+                nums[j] = nums[i];
+                    j++;
             }
         }
         
-        
-        for(int i=n-1; i>=n-prevCount; i--){
-            
-            nums[i]=0;
-            
-        }
-        
-        for(int i=0; i<v.size(); i++){
-            nums[v[i].second] = v[i].first;
+        while(j < n){
+            nums[j] = 0;
+            j++;
         }
         
         
