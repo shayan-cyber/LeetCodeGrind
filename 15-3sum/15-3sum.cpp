@@ -23,34 +23,14 @@ class Solution
                             nums[j],
                             nums[k]
                         };
-                        sort(p.begin(), p.end());
 
-                        if (s.find(p) == s.end())
-                        {
-                            s.insert(p);
-                            v.push_back(p);
-                        }
-
-                        if(j+1<n){
-                            if(nums[j+1] + nums[k] >= temp  ){
-                            k--;
-                            }else if(nums[j+1]+ nums[k]<temp ){
-                                j++;
-                            }
-                            
-                        }
-                        
-                        if(k-1>=0){
-                            if(nums[j] + nums[k-1] >= temp ){
-                            k--;
-                        }else if(nums[j]+ nums[k-1]<temp ){
+                        v.push_back(p);
+                        while (j < k && nums[j + 1] == nums[j])
                             j++;
-                        }
-                        }
-                        if(k-1<0 && j+1 >=n){
-                            break;
-                        }
-                        
+                        while (j <k && nums[k - 1] == nums[k])
+                            k--;
+                        j++;
+                        k--;
                     }
                     else if (nums[j] + nums[k] > temp)
                     {
@@ -61,6 +41,8 @@ class Solution
                         j++;
                     }
                 }
+                while (i -1 >=0 && nums[i] == nums[i - 1])
+                    i--;
             }
 
             return v;
