@@ -1,4 +1,4 @@
-1. Merge Two Sorted Arrays:
+1. Merge Two Sorted Arrays:(Better I Think)
 we'll first count the last index of negative elements .
 we'll square all the elements eg [-4, -1 , 0, 3, 10] -> [16, 1, 0, 9, 100]
 here 1, 16 and 0, 9, 100 are two sorted arrays (first one is reversed in the actual squared array) and we can now merge both.
