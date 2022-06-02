@@ -1,1 +1,1 @@
-​
+It is similar to 3 sum problem. Just check the code You'll understand
