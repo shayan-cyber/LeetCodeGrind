@@ -15,3 +15,6 @@ so we'll make unordered map for all the remainder of currSum if we find same rem
 (NOTE: for 0 remainder we'll add 1 first on the map cause 0 remainder means already the total sub array sum is divisible by k )
 ​
 ​
+https://www.youtube.com/watch?v=QM0klnvTQzk&t=478s
+​
+​
