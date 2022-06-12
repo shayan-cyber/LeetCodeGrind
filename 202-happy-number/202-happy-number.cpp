@@ -51,17 +51,36 @@ class Solution
         
        	//         second approach to detect loop using tortoise and hare method(floyd's cycle detection)
         
-        int slow = n;
-        int fast = n;
+//         int slow = n;
+//         int fast = n;
         
-        do{
-            slow = getSqrSum(slow);
-            fast = getSqrSum(getSqrSum(fast));
+//         do{
+//             slow = getSqrSum(slow);
+//             fast = getSqrSum(getSqrSum(fast));
             
             
-        }while(slow!=fast);
+//         }while(slow!=fast);
         
-        return slow== 1;
+//         return slow== 1;
+        
+        
+//         best approach 
+        
+        int temp =n;
+        while(1){
+        
+            
+            if(temp==1)
+                return true;
+            if(temp == 89)
+                return false;
+            temp = getSqrSum(temp);
+            
+        }
+
+
+        
+        
 
     }
 };
