@@ -16,6 +16,7 @@ public:
         while(true){
             ans = ans + to_string(v[k/fact]);
             v.erase(v.begin()+ k/fact);
+            //the base condition is put here cause if we put it on top at some point v.size()==0 and it will cause error in fact = fact/v.size();
             if(v.size()==0){
                 break;
             }
