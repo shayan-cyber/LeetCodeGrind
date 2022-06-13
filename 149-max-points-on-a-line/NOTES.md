@@ -1,1 +1,2 @@
-​
+if slope is same with the point then all the points will be one same line.
+so for each point we iterate through the next points and make map for each slope that it makes with all the successive points and count frequency ..the frequency will give the maximum points on that line with that slope. we have to calculate the max of the frequncy
