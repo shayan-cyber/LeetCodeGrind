@@ -1,1 +1,3 @@
-​
+we'll make array of canditates to track no of candies they have . we'll give 1 candy to each ..
+now to check whether each element has more candy than it's left (if it has more rating than left one) one we start loop from left and give extra candy if rating is more than left.
+similarly we do for checking if current one has more candy than right one (if it has more rating) by right to left loop..here we use max cause there may be a case where already it has more candy than right one when we were iterating through left to right.
