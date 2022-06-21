@@ -1,1 +1,1 @@
-​
+in the last line of help recursive funtion we are checking left left node with right of the right node and right of the left node with the left of the right node
