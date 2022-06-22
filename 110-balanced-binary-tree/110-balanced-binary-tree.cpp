@@ -11,30 +11,42 @@
  */
 class Solution {
 public:
+    bool flag = true;
+    
     int height(TreeNode* root){
         
         if(root == NULL)
             return 0;
-        return max(height(root->left) , height(root->right)) +1;
         
-    }
-    
-    bool solve(TreeNode* root){
-        if(root == NULL)
-           return  true;
         int lH = height(root->left);
         int rH = height(root->right);
         if(abs(lH-rH) > 1)
-            return false;
-        
-        return solve(root -> left) && solve(root->right);
-
+            flag = false;
+        return max(lH,rH) +1;
         
     }
     
-    bool isBalanced(TreeNode* root) {
+//     bool solve(TreeNode* root){
+//         if(root == NULL)
+//            return  true;
+//         int lH = height(root->left);
+//         int rH = height(root->right);
+//         if(abs(lH-rH) > 1)
+//             return false;
         
-        return solve(root);
+//         return solve(root -> left) && solve(root->right);
+
+        
+//     }
+    
+    bool isBalanced(TreeNode* root) {
+        // return solve(root);
+        height(root);
+        if(flag){
+            return true;
+        }else{
+            return false;
+        }
         
         
     }
