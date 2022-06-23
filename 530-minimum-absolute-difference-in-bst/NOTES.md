@@ -1,1 +1,3 @@
-​
+To get min diff we can sort the tree in ascending order..
+cause min diff can be found from the diff of two adjacent integers..
+we don't need sorting cause if we do inorder traversal of BST it'll be sorted in ascending order. we'll go till last leftest element and maintain prev variable..first prev will be INT_MIN then after the leftest element that will become prev and we will calculate diff from next leftest from the prev var..
