@@ -1,1 +1,2 @@
-​
+we maintain a prev variable which will store the max val of of prev nodes in the path to the curr node..we increase count if curr node is more or equal to the prev..
+now we call recursively for left subtree /reight subtree with prev = max(prev, root->val)
