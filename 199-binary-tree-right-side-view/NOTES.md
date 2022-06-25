@@ -1,1 +1,1 @@
-​
+Doing level order traversal(BFS)..but pushing right node first cause we need right view ..and to keep track of level we are keeping a var count..and we are pushing pair with node and level of the node..as first node of each level we have to push to answer after that we increase the count so that we can skip other nodes in the queue which are on the same level.
