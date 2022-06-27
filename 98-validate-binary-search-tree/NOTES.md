@@ -1,1 +1,1 @@
-​
+we maintain min and max variables cause for right subtree the root should be more than the min(previous visited max node) and for left subtree the root should be less than min (previous visited min node).
