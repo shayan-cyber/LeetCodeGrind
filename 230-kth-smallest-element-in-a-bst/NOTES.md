@@ -1,1 +1,1 @@
-​
+inorder traversal of bst will give sorted output..so we are maintaining count through inorder traversal and comparing it with k
