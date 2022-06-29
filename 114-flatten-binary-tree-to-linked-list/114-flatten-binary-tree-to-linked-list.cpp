@@ -11,41 +11,34 @@
  */
 class Solution {
 public:
-    vector <int> arr;
-    
-    void help(TreeNode* root){
+    void morrisTrav(TreeNode* root){
         
         
-        if(root == NULL)
-            return;
         
+        TreeNode* curr = root;
         
-        arr.push_back(root-> val);
-        help(root -> left);
-        help(root-> right);
+        while(curr != NULL){
+            
+            
+            if(curr -> left){
+                TreeNode* prev = curr -> left;
+                while(prev -> right){
+                    prev = prev -> right;
+                }
+                
+                prev -> right = curr -> right;
+                curr -> right = curr -> left;
+                curr -> left = NULL;
+            }
+            
+            curr = curr -> right;
+        }
+        
         
     }
     
     
-    
     void flatten(TreeNode* root) {
-        
-        help(root);
-        
-        TreeNode * myroot = root;
-        for(int i=1; i<arr.size(); i++){
-            
-            TreeNode* temp = new TreeNode(arr[i]);
-            // myroot -> right = new TreeNode(arr[i]);
-            myroot -> right = temp;
-            myroot -> left = NULL;
-            myroot = temp;
-        }
-        
-        
-        
-        
-        
-        
+        morrisTrav(root);
     }
 };
