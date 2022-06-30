@@ -1,1 +1,1 @@
-​
+to check sorted we check each adjacent words .. through check letters function
