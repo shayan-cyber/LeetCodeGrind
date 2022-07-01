@@ -10,41 +10,56 @@
  */
 class Solution {
 public:
+    
+    ListNode* help(ListNode* head, ListNode* prev){
+        
+        if(!head)
+            return prev;
+        
+        
+        ListNode* next = head -> next;
+        head -> next = prev;
+        return help(next, head);
+        
+    }
+    
     ListNode* reverseList(ListNode* head) {
         
 //         using stack
         
-        stack <ListNode*>st;
+//         stack <ListNode*>st;
         
         
-        ListNode* mynode = head;
-        while(mynode){
+//         ListNode* mynode = head;
+//         while(mynode){
             
-            st.push(mynode);
-            mynode = mynode-> next;
+//             st.push(mynode);
+//             mynode = mynode-> next;
             
-        }
-        if(st.size()==0)
-            return NULL;
-        // ListNode* myhead = st.top();
+//         }
+//         if(st.size()==0)
+//             return NULL;
+//         // ListNode* myhead = st.top();
         
-        ListNode* temp = NULL;
-        ListNode* myhead = st.top();
-        while(!st.empty()){
+//         ListNode* temp = NULL;
+//         ListNode* myhead = st.top();
+//         while(!st.empty()){
             
-            temp = st.top();
-            st.pop();
+//             temp = st.top();
+//             st.pop();
             
-            if(st.size()>0){
-                temp -> next = st.top();
-            }else{
-                temp -> next = NULL;
-            }
+//             if(st.size()>0){
+//                 temp -> next = st.top();
+//             }else{
+//                 temp -> next = NULL;
+//             }
             
             
-        }
+//         }
         
-        return myhead;
+//         return myhead;
+        
+        return help(head,NULL);
         
     }
 };
