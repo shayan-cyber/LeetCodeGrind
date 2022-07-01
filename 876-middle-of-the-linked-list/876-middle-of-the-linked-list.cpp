@@ -11,32 +11,51 @@
 class Solution {
 public:
     ListNode* middleNode(ListNode* head) {
-        int count =0;
+        
+//         first approach (naive)
+//         int count =0;
         
         
-        ListNode* mynode = head;
-        while(mynode != NULL){
+//         ListNode* mynode = head;
+//         while(mynode != NULL){
             
             
-            count++;
-            mynode = mynode -> next;
+//             count++;
+//             mynode = mynode -> next;
             
             
+//         }
+        
+//         cout<<count;
+        
+//         mynode = head;
+//         int temp =count/2;
+//         count =1;
+//         while(mynode != NULL){
+//             if(count == temp+1)
+//                 break;
+//             mynode = mynode -> next;
+//             count ++;
+            
+//         }
+//         // return NULL;
+//         return mynode;
+        
+//         using slow fast pointer
+        
+        
+        ListNode* slow = head;
+        ListNode* fast = head;
+        
+        
+        while(fast && fast -> next){
+            slow = slow -> next;
+            fast = fast -> next -> next;
         }
         
-        cout<<count;
         
-        mynode = head;
-        int temp =count/2;
-        count =1;
-        while(mynode != NULL){
-            if(count == temp+1)
-                break;
-            mynode = mynode -> next;
-            count ++;
-            
-        }
-        // return NULL;
-        return mynode;
+        return slow;
+        
+        
     }
 };
