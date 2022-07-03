@@ -1,1 +1,1 @@
-​
+for reverse operation maintaining three stacks(similar to reverse linkedlist)
