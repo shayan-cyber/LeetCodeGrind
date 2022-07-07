@@ -1,0 +1,3 @@
+https://leetcode.com/problems/daily-temperatures/discuss/1574806/C%2B%2B-EASY-standard-sol-oror-INTUITIVE-approach-with-DRY-RUN-oror-STACK-appraoch
+​
+we'll start iterating temp array from right to left and start storing next greater element for each element..if temp[i] is less than s.top() then next greater element will be the s.top() so we'll store distance in ng array else if temp[i] is more than st.pop() we'll keep poping uitil we find greater element
