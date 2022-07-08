@@ -17,16 +17,11 @@ class Solution
                     {
                         int temp = k-1;
                         st.pop();
-                        // while (!st.empty() && temp)
-                        // {
-                        //     st.pop();
-                        //     temp--;
-                        // }
+                        
                     }
                     else
                     {
-                        // st.push({ s[i],
-                        //     // st.top().second + 1 });
+                     
                         st.top().second++;
                     }
                 }
