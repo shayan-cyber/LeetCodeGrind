@@ -1,1 +1,1 @@
-​
+push element in stack with current frequency , if we find same char and frequency matches we'll pop
