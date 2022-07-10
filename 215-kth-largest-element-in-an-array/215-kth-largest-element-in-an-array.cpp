@@ -11,7 +11,7 @@ public:
         
         int res;
         while(!pq.empty() && k--){
-            res = (pq.top());
+            res = pq.top();
             pq.pop();
         }
         
