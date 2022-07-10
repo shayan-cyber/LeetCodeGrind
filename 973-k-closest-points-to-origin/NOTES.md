@@ -1,1 +1,1 @@
-​
+using priority queue to store points (indices) according to least distance from origin(minheap)
