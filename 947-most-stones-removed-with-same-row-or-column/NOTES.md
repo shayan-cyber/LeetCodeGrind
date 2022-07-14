@@ -1,1 +1,2 @@
-​
+using DSU we'll connect all the stones with same row or column and calculate no of connected DSUs that'll give us the no of stones remaining after removed..cause at last removing all the stones from a connected DSU only one stone will be left .
+at the end answer will be total stones - no.of stones left(no of dsu)
