@@ -4,14 +4,14 @@ class Solution
         vector<int> res;
     int help(int num)
     {   
-        cout<<num<<" ";
+        
         if (res[num] != -1)
             return res[num];
         if (num == 0)
         {
             
             res[0] = 0;
-            cout<<"here"<<" ";
+          
             return 0;
         }
 
