@@ -1,0 +1,1 @@
+we'll make adj list of the graph then for each edge as source we'll run dijsatras algo to calculate all the shortest paths from the source to each node and for each src we'll count the shortest paths which are less than threshold and push the count of those nodes alongwith the node in a res array then we'll sort it to get least numebered
