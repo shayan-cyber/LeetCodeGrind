@@ -87,10 +87,12 @@ public:
     
     
     
-//     using dfs
     
     
-    void dfs(int i,int j,vector<vector<char>> &grid, int n, int m ){
+// using bfs
+    
+    
+     void bfs(int i,int j,vector<vector<char>> &grid, int n, int m ){
         
         if(i<0 || j<0 || i>=n || j >= m){
             return ;
@@ -98,14 +100,42 @@ public:
         
         if(grid[i][j] == '2' || grid[i][j] == '0')
             return ;
+        queue <pair<int,int>> q;
+        q.push({i,j});
         grid[i][j] = '2';
-        
-        //all 4 directions         
-        dfs(i, j+1, grid, n, m);
-        dfs(i, j-1, grid, n, m);
-        dfs(i+1, j, grid, n, m);
-        dfs(i-1, j, grid, n, m);
+         
+         while(!q.empty()){
             
+                 int ni = q.front().first;
+                 int nj = q.front().second;
+                 
+                 q.pop();
+                 
+                 if(ni+1<n && grid[ni+1][nj] == '1'){
+                     q.push({ni+1, nj}); 
+                     grid[ni+1][nj] = '2';
+                 }
+                 
+                 if(nj+1<m && grid[ni][nj+1] == '1'){
+                     q.push({ni, nj+1});
+                     grid[ni][nj+1] = '2';
+                 }
+                 if(nj-1>=0 && grid[ni][nj-1] == '1'){
+                     q.push({ni, nj-1});
+                     grid[ni][nj-1] ='2';
+                 
+                 }
+                 
+                 if(ni-1>=0 && grid[ni-1][nj] == '1'){
+                     q.push({ni-1, nj});
+                     grid[ni-1][nj] = '2';
+                 }
+                 
+                 
+                 
+                 
+             }
+         
               
         
     }
@@ -121,7 +151,7 @@ public:
         for(int i=0; i<n; i++){
             for(int j=0; j<m; j++){
                 if(grid[i][j] == '1'){
-                    dfs(i,j, grid, n,m);
+                    bfs(i,j, grid, n,m);
                     
                     count++;
                     
@@ -133,8 +163,59 @@ public:
         
         
         return count;
-        
-        
-        
+    
+    
+    
     }
+    
+//     using dfs/ bfs
+    
+    
+//     void dfs(int i,int j,vector<vector<char>> &grid, int n, int m ){
+        
+//         if(i<0 || j<0 || i>=n || j >= m){
+//             return ;
+//         }
+        
+//         if(grid[i][j] == '2' || grid[i][j] == '0')
+//             return ;
+//         grid[i][j] = '2';
+        
+//         //all 4 directions         
+//         dfs(i, j+1, grid, n, m);
+//         dfs(i, j-1, grid, n, m);
+//         dfs(i+1, j, grid, n, m);
+//         dfs(i-1, j, grid, n, m);
+            
+              
+        
+//     }
+    
+    
+    
+//     int numIslands(vector<vector<char>>& grid) {
+        
+//         int n = grid.size();
+//         int m = grid[0].size();
+        
+//         int count =0;
+//         for(int i=0; i<n; i++){
+//             for(int j=0; j<m; j++){
+//                 if(grid[i][j] == '1'){
+//                     dfs(i,j, grid, n,m);
+                    
+//                     count++;
+                    
+//                 }
+                    
+                    
+//             }
+//         }
+        
+        
+//         return count;
+        
+        
+        
+//     }
 };
