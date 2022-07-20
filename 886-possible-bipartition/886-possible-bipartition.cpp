@@ -8,7 +8,8 @@ public:
         for(auto k: adj[s]){
             
             if(colors[k] == -1){
-                possibleToCol(k,adj,colors, 1-newcol);
+                if(!possibleToCol(k,adj,colors, 1-newcol))
+                    return false;
                     
             }else if(colors[s] == colors[k]){
                     return false;
