@@ -1,1 +1,1 @@
-​
+we'll rund dfs for each cell containing 1 and mark the connected islands as visited(2) through dfs, so when we find grid[i][j] == 2 it means it was a 1 but it is a part of island which we already counted(through dfs).
