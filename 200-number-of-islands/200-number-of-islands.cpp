@@ -63,22 +63,13 @@ public:
         
         
         set <int> parents;
-//         for(int i=0; i<l; i++){
-//             int temp = findpar(i);
-//             if(parents.find(temp) == parents.end()){
-//                 parents.insert(temp);
-//             }
-//         }
+
         
         
         for(int i=0; i<grid.size(); i++){
             for(int j=0; j<grid[i].size(); j++){
                 if(grid[i][j] == '1'){
-                    // int temp = findpar(grid[i].size()*i + j);
-                    // if(parents.find(temp) == parents.end()){
-                    //     parents.insert(temp);
-                    // }
-                    
+ 
                     parents.insert(findpar(i*m+j));
                 }
                 
