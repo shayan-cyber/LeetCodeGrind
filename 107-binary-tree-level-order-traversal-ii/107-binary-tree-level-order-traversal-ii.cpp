@@ -11,7 +11,7 @@
  */
 class Solution {
 public:
-     stack <TreeNode*> s;
+ 
     vector<vector<int>> res;
     
     void solve(TreeNode*root){
@@ -32,7 +32,7 @@ public:
                 
                 temp.push_back(t->val);
                 
-                s.push(t);
+       
                 
                 if(t -> left){
                     q.push(t->left);
