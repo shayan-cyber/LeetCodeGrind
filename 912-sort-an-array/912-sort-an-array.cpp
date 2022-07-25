@@ -20,13 +20,13 @@ public:
         int i =0; int j =0; int k = left;
         
         while(i<mid-left+1 && j<right-mid ){
-            if(leftarr[i]> rightarr[j]){
-                arr[k] = rightarr[j]; 
-                j++;
+            if(leftarr[i]< rightarr[j]){
+                arr[k] = leftarr[i]; 
+                i++;
             }
             else{
-                arr[k] = leftarr[i];
-                i++;
+                arr[k] = rightarr[j];
+                j++;
             }
             k++;
             
