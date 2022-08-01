@@ -11,55 +11,31 @@
 class Solution {
 public:
     
-    ListNode* help(ListNode* head, ListNode* prev){
+
         
-        if(!head)
-            return prev;
-        
-        
-        ListNode* next = head -> next;
-        head -> next = prev;
-        return help(next, head);
-        
-    }
+
     
     ListNode* reverseList(ListNode* head) {
         
-//         using stack
-        
-//         stack <ListNode*>st;
-        
-        
-//         ListNode* mynode = head;
-//         while(mynode){
+ if(head == NULL || head-> next == NULL)
+            return head;
+       ListNode* prev = NULL;
+       ListNode* curr = head;
+       ListNode* nxt = head-> next;
             
-//             st.push(mynode);
-//             mynode = mynode-> next;
+        while(nxt){
+            curr -> next = prev;
+            prev = curr;
+            curr = nxt;
+            nxt = nxt -> next;
             
-//         }
-//         if(st.size()==0)
-//             return NULL;
-//         // ListNode* myhead = st.top();
+        }
+        curr -> next = prev;
         
-//         ListNode* temp = NULL;
-//         ListNode* myhead = st.top();
-//         while(!st.empty()){
-            
-//             temp = st.top();
-//             st.pop();
-            
-//             if(st.size()>0){
-//                 temp -> next = st.top();
-//             }else{
-//                 temp -> next = NULL;
-//             }
-            
-            
-//         }
         
-//         return myhead;
         
-        return help(head,NULL);
+        return curr;
+        
         
     }
 };
