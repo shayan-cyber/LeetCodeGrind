@@ -9,34 +9,77 @@
 class Solution {
 public:
     
-    ListNode *headInt = NULL;
+   
     
-    bool flag = false;
-    
-    void help(ListNode *currA, ListNode *currB){
+    ListNode* help(ListNode *currA, ListNode *currB){
         
-        if(currA == NULL || currB == NULL)
-            return;
         
-        ListNode* tempA = currA;
+        ListNode* dumA= currA;
+        ListNode* dumB = currB;
         
-        while(tempA){
+        
+        int countA = 0;
+        int countB= 0;
+        while(dumA){
+            dumA = dumA -> next;
+            countA++;
+        }
+        
+        while(dumB){
+            dumB = dumB -> next;
+            countB++;
+        }
+        
+        
+        
+        if(countA>countB){
             
-            ListNode* tempB = currB;
+            dumA = currA;
+            int d = countA - countB;
+            while(d--){
+                dumA = dumA -> next;
+                
+            }
             
-            while(tempB){
+            dumB = currB;
+            while(dumB != dumA){
                 
-                if(tempA == tempB ){
-                    headInt = tempA;
-                    return;
-                }
-                    
+                dumB= dumB-> next;
+                dumA = dumA -> next;
                 
-                tempB = tempB -> next;
+                
             }
             
             
-            tempA = tempA -> next;
+            return dumB;
+            
+            
+            
+        }else{
+            
+            
+            dumB = currB;
+            int d = countB -countA;
+            
+            while(d--){
+                dumB = dumB -> next;
+                
+            }
+            dumA = currA;
+            
+           while(dumB != dumA){
+                
+                dumB= dumB-> next;
+                dumA = dumA -> next;
+                
+                
+            }
+            
+            
+            return dumB;
+            
+            
+            
         }
         
         
@@ -52,9 +95,9 @@ public:
     
     ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) {
         
-        help(headA,headB);
+        return help(headA,headB);
         
-        return headInt;
+        
         
     }
 };
