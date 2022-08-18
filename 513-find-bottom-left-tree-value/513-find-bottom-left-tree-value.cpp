@@ -13,6 +13,8 @@ class Solution {
 public:
     vector<vector<int>> res;
     
+    int ans;
+    
     void solve(TreeNode* root){
         
         if(root == NULL)
@@ -25,12 +27,16 @@ public:
         
         while(!q.empty()){
             int l = q.size();
-            vector<int> temp;
-            while(l--){
+            int temp =l;
+            // vector<int> temp;
+            while(l> 0){
+                
                 
                 auto t = q.front();
                 q.pop();
-                temp.push_back(t-> val);
+                if(temp ==l )
+                    ans = t -> val;
+                // temp.push_back(t-> val);
                 if(t-> left){
                     q.push(t-> left);
                 }
@@ -38,11 +44,12 @@ public:
                     q.push(t-> right);
                 }
                 
+                l--;
                 
                 
             }
             
-            res.push_back(temp);
+            // res.push_back(temp);
         }
         
     }
@@ -52,6 +59,7 @@ public:
         
         int n = res.size();
         
-        return res[n-1][0];
+        // return res[n-1][0];
+        return ans;
     }
 };
