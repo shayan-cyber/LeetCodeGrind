@@ -28,7 +28,7 @@ public:
         while(!q.empty()){
             int l = q.size();
             int temp =l;
-            // vector<int> temp;
+           
             while(l> 0){
                 
                 
@@ -36,7 +36,7 @@ public:
                 q.pop();
                 if(temp ==l )
                     ans = t -> val;
-                // temp.push_back(t-> val);
+               
                 if(t-> left){
                     q.push(t-> left);
                 }
@@ -49,7 +49,7 @@ public:
                 
             }
             
-            // res.push_back(temp);
+       
         }
         
     }
@@ -59,7 +59,7 @@ public:
         
         int n = res.size();
         
-        // return res[n-1][0];
+       
         return ans;
     }
 };
