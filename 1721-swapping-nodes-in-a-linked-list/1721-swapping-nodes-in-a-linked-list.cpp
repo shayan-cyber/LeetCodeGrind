@@ -43,7 +43,7 @@ public:
             curr = curr -> next;
         }
         
-        cout<< start -> val<<" "<< curr -> val<<endl;
+        // cout<< start -> val<<" "<< curr -> val<<endl;
         
         // swap(curr, start);
         int val1 = curr -> val;
