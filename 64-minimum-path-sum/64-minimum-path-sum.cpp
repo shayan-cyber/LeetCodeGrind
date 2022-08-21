@@ -24,8 +24,21 @@ public:
         if(dp[i][i] != -1)
             return dp[i][j];
         
+        int temp1;
+        if(dp[i+1][j] != -1){
+            temp1 = dp[i+1][j];
+        }else{
+            temp1 = solve(g, i+1, j, n,m );
+        }
         
-        return dp[i][j] = min( solve(g, i+1, j, n,m ), solve(g, i, j+1, n, m)) + g[i][j];
+        int temp2 ;
+        
+        if(dp[i][j+1] != -1){
+            temp2= dp[i][j+1];
+        }else{
+            temp2= solve(g, i, j+1, n, m);
+        }
+        return dp[i][j] = min(temp1 , temp2) + g[i][j];
         
         
         
