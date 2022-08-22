@@ -1,31 +1,53 @@
 class Solution {
 public:
     
-    // memeset(-1, dp.size())
-    int help(int n, vector<int> &dp){
-        if(n==1|| n==0)
+    
+    vector<int> dp;
+    
+    int solve(int n){
+        if(n == 2){
+            return 1; 
+        }
+        if(n==3){
+            return 2;
+        }
+        
+        
+        if(n == 1)
             return 1;
-     
-        int maxi = 0;
         
         
-        if(dp[n]!= -1)
+        if(dp[n] != -1)
             return dp[n];
         
         
-        for(int i=1; i<n; i++){
-            maxi = max(maxi, max(i*help(n-i,dp), i*(n-i)));
+        int temp =0;
+        
+        
+        for(int j=1; j<n; j++){
+            
+            int temp2 = j*(n-j);
+            int temp3 =  j*solve(n-j);
+            int temp4 = max(temp2, temp3);
+            temp = max(temp, temp4);
         }
         
-        return dp[n]=maxi;
+        
+        return dp[n] = temp;
+        
+        
+        
+        
+        
     }
     
+    
+    
+    
     int integerBreak(int n) {
-        vector<int> dp(60,-1);
-        // memset(dp,-1,60);
-   
-        return help(n,dp);
         
+        dp = vector<int> (60,-1);
+      return   solve(n);
         
     }
 };
